@@ -1,0 +1,53 @@
+@for $i from 0 to 5 {
+	.mb#{$i} {
+		@if $i == 0 {
+			margin-bottom: 0!important;
+		} @else {
+			margin-bottom: 0rem + $i!important;
+		}
+	}
+
+	.mt#{$i} {
+		@if $i == 0 {
+			margin-top: 0!important;
+		} @else {
+			margin-top: 0rem + $i!important;
+		}
+	}
+
+	.mr#{$i} {
+		@if $i == 0 {
+			margin-right: 0!important;
+		} @else {
+			margin-right: 0rem + $i!important;
+		}
+	}
+
+	.ml#{$i} {
+		@if $i == 0 {
+			margin-left: 0!important;
+		} @else {
+			margin-left: 0rem + $i!important;
+		}
+	}
+
+	.my#{$i} {
+		@if $i == 0 {
+			margin-top: 0!important;
+			margin-bottom: 0!important;
+		} @else {
+			margin-top: 0rem + $i!important;
+			margin-bottom: 0rem + $i!important;
+		}
+	}
+
+	.mx#{$i} {
+		@if $i == 0 {
+			margin-right: 0!important;
+			margin-left: 0!important;
+		} @else {
+			margin-right: 0rem + $i!important;
+			margin-left: 0rem + $i!important;
+		}
+	}
+}

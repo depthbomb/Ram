@@ -1,0 +1,39 @@
+{
+	"rules": {
+		"indent": [
+			4,
+			"tab"
+		],
+		"quotes": [
+			2,
+			"double"
+		],
+		"no-undef": 0,
+		"no-unused-vars": 0,
+		"no-console": 0
+	},
+	"ecmaFeatures": {
+		"modules": true,
+		"arrowFunctions": true,
+		"classes": true
+	},
+	"env": {
+		"browser": true,
+		"es6": true,
+		"node": true
+	},
+	"extends": [
+		"airbnb-base",
+		"eslint:recommended"
+	],
+	"plugins": [
+		"import"
+	],
+	"parserOptions": {
+		"ecmaVersion": 7,
+		"ecmaFeatures": {
+			"experimentalObjectRestSpread": true
+		},
+		"sourceType": "module"
+	}
+}

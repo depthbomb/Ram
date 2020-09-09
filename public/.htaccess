@@ -1,0 +1,32 @@
+<IfModule mod_rewrite.c>
+	<IfModule mod_negotiation.c>
+		Options -MultiViews -Indexes
+	</IfModule>
+
+	RewriteEngine On
+
+	# Handle Authorization Header
+	RewriteCond %{HTTP:Authorization} .
+	RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+	# Redirect Trailing Slashes If Not A Folder...
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_URI} (.+)/$
+	RewriteRule ^ %1 [L,R=301]
+
+	# Handle Front Controller...
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^ index.php [L]
+</IfModule>
+
+<FilesMatch "\.(?i:gif|jpe?g|png|ico|css|js|txt|webp|svg|ttf|otf|eot|woff|woff2)$">
+	<IfModule mod_headers.c>
+		FileETag -INode MTime Size
+		Header set Cache-Control "max-age=2592000, public, must-revalidate"
+	</IfModule>
+</FilesMatch>
+
+<ifmodule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript text/javascript application/javascript image/svg+xml application/json application/xml application/xhtml+xml application/rss+xml
+</ifmodule>

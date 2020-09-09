@@ -1,0 +1,16 @@
+{
+	"presets": [
+		"stage-0",
+		"es2015"
+	],
+	"plugins": [
+		"transform-es2015-block-scoping",
+		"transform-class-properties",
+		"transform-remove-strict-mode"
+	],
+	"env": {
+		"production": {
+			"presets": ["minify"]
+		}
+	}
+}
